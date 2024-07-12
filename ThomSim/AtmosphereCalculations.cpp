@@ -30,15 +30,18 @@ float calculatePressure(float elevation, float temperature) {
 	}
 	return pressure*1000;
 }
+//https://en.wikipedia.org/wiki/Density_of_air
 /*
 float calculateAirDensity(float pressure, float temperature) {
 	return pressure / (celToKel(temperature) * AIR_GAS_CONSTANT);
 }
 */
+//https://en.wikipedia.org/wiki/Density_of_air
 float calculateAirDensity(float pressure, float temperature) {
 	return (pressure* MOLAR_MASS_DRY_AIR) / (celToKel(temperature) * GAS_CONSTANT);
 }
 
+//https://en.wikipedia.org/wiki/Speed_of_sound
 float calculateSpeedOfSound(float temperature) {
 	return sqrtf(GAMMA * AIR_GAS_CONSTANT * celToKel(temperature));
 }
